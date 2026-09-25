@@ -1,0 +1,116 @@
+# ------------------------------------------------------------------
+# Arkum interactive invites — PUBLIC repository.
+# Only finished, publishable invitation files belong here.
+# ------------------------------------------------------------------
+
+# Secrets & environment
+.env
+.env.*
+!.env.example
+*.env
+secrets/
+secret/
+credentials/
+*credentials*.json
+*secret*.json
+service-account*.json
+.netrc
+.npmrc
+.pypirc
+
+# Keys & certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+
+# Databases & data dumps
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+
+# Private source / reference material (keep in the private working folders)
+references/
+reference/
+source-art/
+_private/
+private/
+client/
+clients/
+correspondence/
+contracts/
+*.psd
+*.ai
+*.afdesign
+*.procreate
+*.sketch
+*.fig
+
+# Development-only tooling & outputs
+tools/
+scripts/local/
+screenshots/
+shots/
+test-results/
+playwright-report/
+coverage/
+*.log
+logs/
+tmp/
+temp/
+.tmp/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Dependencies, builds & caches
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+.next/
+.sass-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+.history/
+
+# Claude / AI tool local state
+.claude/
+.claude-*/
+CLAUDE.local.md
+
+# OS files
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
