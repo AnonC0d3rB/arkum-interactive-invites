@@ -50,11 +50,4 @@ reduced motion switched on.
 
 ## Security
 
-This repository is **public**. Commit only the finished invitation files.
-
-- Never commit secrets, API keys, tokens, `.env` files, credentials or certificates.
-- Keep reference artwork, source files, extraction tools, client correspondence and internal notes
-  in private working folders, not here.
-- Contact details and addresses belong here only when the invitation itself displays them.
-- Check `git status` and the staged file list before every commit. `.gitignore` is a safety net,
-  not a substitute for checking.
+This repository is **public**. Only the finished invitation files are committed.
