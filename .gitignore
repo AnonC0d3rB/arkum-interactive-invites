@@ -41,6 +41,8 @@ id_ed25519*
 # Private source / reference material (keep in the private working folders)
 references/
 reference/
+ref/
+refs/
 source-art/
 _private/
 private/

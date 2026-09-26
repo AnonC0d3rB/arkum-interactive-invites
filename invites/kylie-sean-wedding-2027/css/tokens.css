@@ -1,0 +1,74 @@
+/* ------------------------------------------------------------------------
+   Design tokens — A Story Worth Unfolding
+   Stationery palette: near-black table, ivory paper, champagne as accent only.
+   ------------------------------------------------------------------------ */
+
+@font-face {
+  font-family: 'Armelie';
+  src: url('../assets/fonts/armelie.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+:root {
+  /* surfaces */
+  --table: #0d0b09;
+  --table-2: #17130f;
+  --ivory: #f5efe4;
+  --ivory-2: #ede4d4;
+  --beige: #e8dcc8;
+  --noir: #1c1815;
+
+  /* ink */
+  --ink: #1f1a15;
+  --ink-soft: #4b4037;
+  --muted: #6c5c4e;
+  --noir-ink: #ede4d4;
+  --noir-muted: #b3a48f;
+  --error: #8e3b2e;
+
+  /* accents */
+  --champagne: #b39566;
+  --champagne-light: #d3bf98;
+  --champagne-deep: #745b3c;
+  --brown: #4b3627;
+
+  --line: rgba(31, 26, 21, 0.15);
+  --line-strong: rgba(31, 26, 21, 0.28);
+  --line-gold: rgba(179, 149, 102, 0.55);
+  --line-light: rgba(211, 191, 152, 0.22);
+
+  /* type */
+  --f-script: 'Armelie', 'Cormorant Garamond', serif;
+  --f-serif: 'Cormorant Garamond', 'Cormorant', Garamond, 'Times New Roman', serif;
+  --f-sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  --t-body: clamp(1.14rem, 1.02rem + 0.55vw, 1.34rem);
+  --t-lede: clamp(1.2rem, 1.05rem + 0.9vw, 1.55rem);
+  --t-title: clamp(2.5rem, 1.2rem + 7.4vw, 6.4rem);
+  --t-display: clamp(3.8rem, 2.2rem + 9vw, 9rem);
+  --t-label: 0.69rem;
+
+  /* layout */
+  --gutter: clamp(10px, 3.4vw, 56px);
+  --pad: clamp(22px, 7vw, 96px);
+  --sheet-max: 1080px;
+  --sheet-gap: clamp(22px, 5vw, 64px);
+  --chapter-space: clamp(88px, 14vw, 176px);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-paper: cubic-bezier(0.22, 0.9, 0.24, 1);
+
+  /* paper texture (supplied artwork, flattened into a seamless tile) */
+  --paper-img: url('../assets/img/paper.webp');
+  --paper-dark-img: url('../assets/img/paper-dark.webp');
+  --paper-size: 520px;
+
+  --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.25), 0 6px 12px -4px rgba(0, 0, 0, 0.35),
+    0 34px 70px -18px rgba(0, 0, 0, 0.7);
+  --shadow-sheet: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 18px 40px -16px rgba(0, 0, 0, 0.55),
+    0 60px 90px -40px rgba(0, 0, 0, 0.6);
+}

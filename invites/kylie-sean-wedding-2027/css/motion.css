@@ -1,0 +1,564 @@
+/* ------------------------------------------------------------------------
+   Reveal vocabulary. JS adds .is-in once an element enters the viewport;
+   every state below is transform / opacity / mask based.
+   ------------------------------------------------------------------------ */
+
+/* shared mask helpers */
+[data-reveal='write'],
+[data-reveal='draw'],
+[data-reveal='milestone'] .milestone__year span,
+.wcard__corner,
+.wcard__divider,
+.fcard__names,
+.fcard__wreath {
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* ----------------------------------------------------------- up / fade -- */
+
+[data-reveal='up'] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 1.1s var(--ease-out) var(--d, 0s), transform 1.3s var(--ease-out) var(--d, 0s);
+}
+
+[data-reveal='fade'] {
+  opacity: 0;
+  transition: opacity 1.4s ease var(--d, 0s);
+}
+
+[data-reveal='up'].is-in,
+[data-reveal='fade'].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ----------------------------------------- write: a pen crossing paper -- */
+
+[data-reveal='write'] {
+  -webkit-mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  transition: -webkit-mask-position 2s var(--ease-in-out) var(--d, 0.2s),
+    mask-position 2s var(--ease-in-out) var(--d, 0.2s);
+}
+
+[data-reveal='write'].is-in {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+}
+
+/* ------------------------------------------- rule: eyebrow lines extend -- */
+
+[data-reveal='rule'] span {
+  opacity: 0;
+  transition: opacity 1.1s ease 0.25s;
+}
+
+[data-reveal='rule']::before,
+[data-reveal='rule']::after {
+  transform: scaleX(0);
+  transition: transform 1.2s var(--ease-out);
+}
+
+[data-reveal='rule']::before {
+  transform-origin: right center;
+}
+
+[data-reveal='rule']::after {
+  transform-origin: left center;
+}
+
+[data-reveal='rule'].is-in span {
+  opacity: 1;
+}
+
+[data-reveal='rule'].is-in::before,
+[data-reveal='rule'].is-in::after {
+  transform: scaleX(1);
+}
+
+/* ---------------------------------------------------- words: rise out -- */
+
+.w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0 0.1em 0.14em 0.04em;
+  margin: 0 -0.1em -0.14em -0.04em;
+}
+
+.w__i {
+  display: inline-block;
+  transform: translateY(108%);
+  transition: transform 1.2s var(--ease-out) calc(var(--i) * 75ms + var(--d, 0.15s));
+}
+
+[data-reveal='words'].is-in .w__i {
+  transform: none;
+}
+
+/* ------------------------------------ draw: ornament grows from corner -- */
+
+[data-reveal='draw'] {
+  -webkit-mask-image: linear-gradient(135deg, #000 42%, transparent 58%);
+  mask-image: linear-gradient(135deg, #000 42%, transparent 58%);
+  -webkit-mask-size: 300% 300%;
+  mask-size: 300% 300%;
+  -webkit-mask-position: 100% 100%;
+  mask-position: 100% 100%;
+  transition: -webkit-mask-position 2.6s var(--ease-in-out) var(--d, 0.3s),
+    mask-position 2.6s var(--ease-in-out) var(--d, 0.3s);
+}
+
+[data-reveal='draw'].is-in {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+}
+
+/* horizontal ornaments draw from the centre outwards */
+.celebration__garland[data-reveal='draw'],
+.farewell__orn[data-reveal='draw'] {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 35%, #000 65%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 35%, #000 65%, transparent);
+  -webkit-mask-size: 0% 100%;
+  mask-size: 0% 100%;
+  -webkit-mask-position: 50% 0;
+  mask-position: 50% 0;
+  transition: -webkit-mask-size 2.2s var(--ease-in-out) 0.2s, mask-size 2.2s var(--ease-in-out) 0.2s;
+}
+
+.celebration__garland[data-reveal='draw'].is-in,
+.farewell__orn[data-reveal='draw'].is-in {
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+}
+
+/* ------------------------------------------ arch: a window uncovered ---- */
+
+[data-reveal='arch'] .arch__window {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.8s var(--ease-paper) 0.1s;
+}
+
+[data-reveal='arch'] .arch__img img {
+  transform: scale(1.14);
+  transition: transform 2.6s var(--ease-out) 0.1s;
+}
+
+[data-reveal='arch'] .arch__rule {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 1.4s ease 0.9s, transform 1.8s var(--ease-out) 0.9s;
+}
+
+[data-reveal='arch'].is-in .arch__window {
+  clip-path: inset(0 0 0 0);
+}
+
+[data-reveal='arch'].is-in .arch__img img,
+[data-reveal='arch'].is-in .arch__rule {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------- crease ------ */
+
+[data-reveal='crease'] .crease__line {
+  transform: scaleX(0);
+  opacity: 1.6;
+  transition: transform 1.6s var(--ease-in-out);
+}
+
+[data-reveal='crease'] .crease__orn {
+  opacity: 0;
+  transform: translateY(6px) scale(0.9);
+  transition: opacity 1s ease 0.9s, transform 1.2s var(--ease-out) 0.9s;
+}
+
+[data-reveal='crease'].is-in .crease__line {
+  transform: none;
+}
+
+[data-reveal='crease'].is-in .crease__orn {
+  opacity: 0.85;
+  transform: none;
+}
+
+/* ------------------------------------------ milestone: date, then words -- */
+
+[data-reveal='milestone'] .milestone__year span {
+  -webkit-mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  transition: -webkit-mask-position 1.6s var(--ease-in-out), mask-position 1.6s var(--ease-in-out);
+}
+
+[data-reveal='milestone'] .milestone__body {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1.1s var(--ease-out) 0.75s, transform 1.3s var(--ease-out) 0.75s;
+}
+
+[data-reveal='milestone'] .milestone__orn img {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.9);
+  transform-origin: 50% 100%;
+  transition: opacity 1.2s ease 1s, transform 1.6s var(--ease-out) 1s;
+}
+
+[data-reveal='milestone'].is-in .milestone__year span {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+}
+
+[data-reveal='milestone'].is-in .milestone__body,
+[data-reveal='milestone'].is-in .milestone__orn img {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------- glow: the lights come up ------- */
+
+[data-reveal='glow'] {
+  opacity: 0.12;
+  text-shadow: none;
+  transition: opacity 2.2s var(--ease-in-out) 0.2s, text-shadow 2.6s ease 0.6s;
+}
+
+[data-reveal='glow'].is-in {
+  opacity: 1;
+  text-shadow: 0 0 34px rgba(230, 186, 120, 0.35);
+}
+
+/* ------------------------------------ deal: swatches laid on the table -- */
+
+[data-reveal='deal'] .swatch {
+  opacity: 0;
+  transform: translateY(-34px) rotate(-14deg) scale(1.08);
+  transition: opacity 0.8s ease calc(var(--i) * 140ms + 0.1s),
+    transform 1.1s cubic-bezier(0.2, 0.9, 0.3, 1.15) calc(var(--i) * 140ms + 0.1s);
+}
+
+[data-reveal='deal'] .palette__name {
+  opacity: 0;
+  transition: opacity 1s ease calc(var(--i) * 140ms + 0.6s);
+}
+
+[data-reveal='deal'].is-in .swatch,
+[data-reveal='deal'].is-in .palette__name {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------- unveil: from the centre outward -- */
+
+[data-reveal='unveil'] {
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 2s var(--ease-in-out) 0.15s;
+}
+
+[data-reveal='unveil'] img {
+  transform: scale(1.06);
+  transition: transform 2.8s var(--ease-out) 0.15s;
+}
+
+[data-reveal='unveil'].is-in {
+  clip-path: inset(0 0 0 0);
+}
+
+[data-reveal='unveil'].is-in img {
+  transform: none;
+}
+
+/* --------------------------------------------------------- detail ------ */
+
+[data-reveal='detail'] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.1s var(--ease-out) var(--d, 0s), transform 1.3s var(--ease-out) var(--d, 0s);
+}
+
+[data-reveal='detail'] .detail__orn img {
+  opacity: 0;
+  transform: translateY(8px) rotate(-6deg);
+  transition: opacity 1.2s ease calc(var(--d, 0s) + 0.35s), transform 1.5s var(--ease-out) calc(var(--d, 0s) + 0.35s);
+}
+
+[data-reveal='detail'].is-in,
+[data-reveal='detail'].is-in .detail__orn img {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------------------------------------------------------- clock ------ */
+
+[data-reveal='clock'] .clock__unit {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s var(--ease-out) calc(var(--i) * 110ms + 0.1s),
+    transform 1.2s var(--ease-out) calc(var(--i) * 110ms + 0.1s);
+}
+
+[data-reveal='clock'].is-in .clock__unit {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------------------------------------------- album: page uncovered ---- */
+
+[data-reveal='album'] {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.9s var(--ease-paper) 0.1s;
+}
+
+[data-reveal='album'] .slot__paper,
+[data-reveal='album'] .slot__photo {
+  opacity: 0;
+  transform: scale(1.12);
+  transition: opacity 1.2s ease calc(var(--i, 0) * 180ms + 1s), transform 2s var(--ease-out) calc(var(--i, 0) * 180ms + 1s);
+}
+
+.album__slot {
+  --i: 0;
+}
+
+[data-reveal='album'].is-in {
+  clip-path: inset(-10% -10% -10% -10%);
+}
+
+[data-reveal='album'].is-in .slot__paper,
+[data-reveal='album'].is-in .slot__photo {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------- print: dropped on top ---- */
+
+[data-reveal='print'] {
+  opacity: 0;
+  transform: translate(10%, -30px) rotate(16deg);
+  transition: opacity 1s ease 1.2s, transform 1.6s cubic-bezier(0.2, 0.85, 0.25, 1.08) 1.2s;
+}
+
+[data-reveal='print'].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------- card: placed on table ---- */
+
+[data-reveal='card'] {
+  opacity: 0;
+  transform: translateY(48px) rotate(-1.6deg);
+  transition: opacity 1.2s var(--ease-out) var(--d, 0s), transform 1.5s var(--ease-paper) var(--d, 0s);
+}
+
+[data-reveal='card'].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------ scenes: settled details ----- */
+
+.wcard__corner,
+.wcard__divider {
+  -webkit-mask-image: linear-gradient(135deg, #000 42%, transparent 58%);
+  mask-image: linear-gradient(135deg, #000 42%, transparent 58%);
+  -webkit-mask-size: 300% 300%;
+  mask-size: 300% 300%;
+  -webkit-mask-position: 100% 100%;
+  mask-position: 100% 100%;
+  transition: -webkit-mask-position 2.4s var(--ease-in-out) 0.15s, mask-position 2.4s var(--ease-in-out) 0.15s;
+}
+
+.wcard__divider {
+  -webkit-mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+}
+
+.is-settled .wcard__corner,
+.is-settled .wcard__divider,
+.scene--static .is-in .wcard__corner,
+.scene--static .is-in .wcard__divider {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+}
+
+.fcard__wreath {
+  -webkit-mask-image: radial-gradient(circle at 50% 100%, #000 55%, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 100%, #000 55%, transparent 70%);
+  -webkit-mask-size: 0% 0%;
+  mask-size: 0% 0%;
+  -webkit-mask-position: 50% 100%;
+  mask-position: 50% 100%;
+  transition: -webkit-mask-size 3s var(--ease-in-out) 0.3s, mask-size 3s var(--ease-in-out) 0.3s;
+}
+
+.fcard__names {
+  -webkit-mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  mask-image: linear-gradient(90deg, #000 44%, transparent 56%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  transition: -webkit-mask-position 2.2s var(--ease-in-out) 1.2s, mask-position 2.2s var(--ease-in-out) 1.2s;
+}
+
+.fcard__date {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 1.4s ease 2.4s, transform 1.6s var(--ease-out) 2.4s;
+}
+
+.is-settled .fcard__wreath,
+.scene--static .is-in .fcard__wreath {
+  -webkit-mask-size: 300% 300%;
+  mask-size: 300% 300%;
+}
+
+.is-settled .fcard__names,
+.scene--static .is-in .fcard__names {
+  -webkit-mask-position: 0 0;
+  mask-position: 0 0;
+}
+
+.is-settled .fcard__date,
+.scene--static .is-in .fcard__date {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------- unpinned scenes ------------ */
+
+.scene--static {
+  height: auto !important;
+}
+
+.scene--static .scene__pin {
+  position: relative;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(36px, 8vw, 64px);
+  padding: var(--chapter-space) var(--gutter);
+  overflow: visible;
+}
+
+.scene--static .scene__eyebrow {
+  margin-top: 0;
+}
+
+.scene--static [data-at] {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: none;
+  transition: opacity 1.2s var(--ease-out), transform 1.4s var(--ease-out);
+}
+
+.scene--static [data-at].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.scene--static .scene__card[data-rise] {
+  transform: translateY(60px) rotate(-2deg);
+}
+
+.scene--static .scene__card[data-rise].is-in {
+  transform: none;
+}
+
+.scene--next.scene--static {
+  --wcard-w: min(84vw, 430px);
+}
+
+.scene--finale.scene--static {
+  --fcard-w: min(82vw, 440px);
+}
+
+/* ------------------------------------------------------ parallax ------- */
+
+[data-parallax] {
+  will-change: transform;
+}
+
+/* ---------------------------------------------------- reduced motion --- */
+/* Applied by the OS preference, or previewed with ?reduced (html.is-reduced). */
+
+.is-reduced *,
+.is-reduced *::before,
+.is-reduced *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transition-delay: 0s !important;
+  scroll-behavior: auto !important;
+}
+
+.is-reduced .opening,
+.is-reduced .opening__stage,
+.is-reduced .opening__controls,
+.is-reduced .reveal-rows,
+.is-reduced .std__status {
+  transition-duration: 0.6s !important;
+}
+
+.is-reduced .opening__stage {
+  translate: none !important;
+}
+
+.is-reduced [data-parallax] {
+  transform: none !important;
+  will-change: auto;
+}
+
+.is-reduced .invite {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* opacity-only fades are kept — they carry no motion */
+  .opening,
+  .opening__stage,
+  .opening__controls,
+  .reveal-rows,
+  .std__status {
+    transition-duration: 0.6s !important;
+  }
+
+  .opening__stage {
+    translate: none !important;
+  }
+
+  [data-parallax] {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .invite {
+    animation: none !important;
+  }
+}
