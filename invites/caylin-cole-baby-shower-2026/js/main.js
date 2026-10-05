@@ -61,32 +61,32 @@
       { transform: "rotate(-5deg) scale(1.03)", offset: 0.3 },
       { transform: "rotate(4deg) scale(1.03)", offset: 0.62 },
       { transform: "rotate(-1deg) scale(1.04)" },
-    ], { duration: 560, easing: "ease-in-out" });
+    ], { duration: 420, easing: "ease-in-out" });
 
     // 2 — ribbon loosens: the bow slips away while the band unwinds from the knot
     play(ribbonTop, [{ transform: "scaleY(1)" }, { transform: "scaleY(0)" }],
-      { duration: 700, delay: 140, easing: "cubic-bezier(.6,0,.35,1)" });
+      { duration: 560, delay: 100, easing: "cubic-bezier(.6,0,.35,1)" });
     play(ribbonBottom, [{ transform: "scaleY(1)" }, { transform: "scaleY(0)" }],
-      { duration: 700, delay: 140, easing: "cubic-bezier(.6,0,.35,1)" });
+      { duration: 560, delay: 100, easing: "cubic-bezier(.6,0,.35,1)" });
     await play(bow, [
       { transform: "rotate(-1deg) scale(1.04)", opacity: 1 },
       { transform: "translate(2%, -6%) rotate(-7deg) scale(1.05)", opacity: 1, offset: 0.22 },
       { transform: "translate(-4%, 70%) rotate(16deg) scale(.96)", opacity: 0 },
-    ], { duration: 1000, easing: "cubic-bezier(.5,0,.75,.4)" });
+    ], { duration: 720, easing: "cubic-bezier(.5,0,.75,.4)" });
 
     // 3 — the flap unfolds (it tucks behind the card once it passes upright)
     const flapDone = play(flap, [
       { transform: "perspective(1000px) rotateX(0deg)" },
       { transform: "perspective(1000px) rotateX(180deg)" },
-    ], { duration: 950, easing: "cubic-bezier(.5,.05,.3,1)" });
-    await wait(420);
+    ], { duration: 760, easing: "cubic-bezier(.5,.05,.3,1)" });
+    await wait(330);
     flap.style.zIndex = "1";
     await flapDone;
 
     // 4 — the invitation card slides out of the envelope
     await play(card, [{ transform: "translateY(0)" }, { transform: "translateY(-58%)" }],
-      { duration: 900, easing: "cubic-bezier(.3,.7,.25,1)" });
-    await wait(260);
+      { duration: 680, easing: "cubic-bezier(.3,.7,.25,1)" });
+    await wait(120);
 
     // 5 — the card comes forward and becomes the page
     const rect = card.getBoundingClientRect();
@@ -103,11 +103,11 @@
     play(card, [
       { transform: "translateY(-58%)" },
       { transform: `translate(${dx}px, ${dy}px) translateY(-58%) scale(${scale})` },
-    ], { duration: 1000, easing: "cubic-bezier(.65,0,.35,1)" });
+    ], { duration: 850, easing: "cubic-bezier(.65,0,.35,1)" });
 
-    await wait(720);
+    await wait(560);
     revealWelcome();
-    await play(opening, [{ opacity: 1 }, { opacity: 0 }], { duration: 600, easing: "ease" });
+    await play(opening, [{ opacity: 1 }, { opacity: 0 }], { duration: 500, easing: "ease" });
     finishOpening();
   }
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Caylin &amp; Cole · Baby Shower</title>
-  <meta name="description" content="A little celebration is waiting for you. Join Caylin &amp; Cole for their baby shower on Saturday 31 October 2026 at 15:00 in Kimberley.">
+  <title>Caylin &amp; Cole · Baby Shower &amp; Gender Reveal</title>
+  <meta name="description" content="We can barely wait… Join Caylin &amp; Cole for their baby shower and gender reveal on Saturday 31 October 2026 at 15:00 in Kimberley. Boy or girl? Come find out with us.">
   <meta name="theme-color" content="#fdf9f1">
   <meta name="color-scheme" content="light">
 
@@ -14,18 +14,18 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anonc0d3rb.github.io/arkum-interactive-invites/invites/caylin-cole-baby-shower-2026/">
   <meta property="og:locale" content="en_ZA">
-  <meta property="og:title" content="Caylin &amp; Cole · Baby Shower">
-  <meta property="og:description" content="A little celebration is waiting for you… Saturday 31 October 2026 · 15:00 · Kimberley">
+  <meta property="og:title" content="Caylin &amp; Cole · Baby Shower &amp; Gender Reveal">
+  <meta property="og:description" content="We can barely wait… Boy or girl? Come find out with us. Saturday 31 October 2026 · 15:00 · Kimberley">
   <meta property="og:image" content="https://anonc0d3rb.github.io/arkum-interactive-invites/invites/caylin-cole-baby-shower-2026/assets/social/og-image.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Illustration of Caylin and Cole waving, with the words Caylin &amp; Cole, Baby Shower">
+  <meta property="og:image:alt" content="Photo of Caylin and Cole with the words We can barely wait, Baby Shower and Gender Reveal">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Caylin &amp; Cole · Baby Shower">
-  <meta name="twitter:description" content="A little celebration is waiting for you… Saturday 31 October 2026 · 15:00 · Kimberley">
+  <meta name="twitter:title" content="Caylin &amp; Cole · Baby Shower &amp; Gender Reveal">
+  <meta name="twitter:description" content="We can barely wait… Boy or girl? Come find out with us. Saturday 31 October 2026 · 15:00 · Kimberley">
   <meta name="twitter:image" content="https://anonc0d3rb.github.io/arkum-interactive-invites/invites/caylin-cole-baby-shower-2026/assets/social/og-image.jpg">
-  <meta name="twitter:image:alt" content="Illustration of Caylin and Cole waving, with the words Caylin &amp; Cole, Baby Shower">
+  <meta name="twitter:image:alt" content="Photo of Caylin and Cole with the words We can barely wait, Baby Shower and Gender Reveal">
   <meta name="apple-mobile-web-app-title" content="Caylin &amp; Cole">
 
   <link rel="icon" href="assets/social/favicon.svg" type="image/svg+xml">
@@ -36,6 +36,10 @@
   <link rel="preload" href="assets/fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/img/ribbon-bow.webp" as="image" type="image/webp">
   <link rel="preload" href="assets/img/wax-seal.webp" as="image" type="image/webp">
+  <!-- first photo after the envelope opens: fetched while the opening plays -->
+  <link rel="preload" as="image" type="image/webp"
+        imagesrcset="assets/photos/couple-cutout-640.webp 640w, assets/photos/couple-cutout-1000.webp 1000w"
+        imagesizes="(min-width: 900px) 470px, 92vw">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -68,7 +72,7 @@
     <img class="opening__deco opening__deco--cloud drift" src="assets/img/cloud.webp" width="144" height="75" alt="" aria-hidden="true">
 
     <div class="opening__stage">
-      <p class="opening__from" aria-hidden="true">for you, from Caylin &amp; Cole</p>
+      <p class="opening__from" aria-hidden="true">We can barely wait…</p>
 
       <button class="envelope" id="envelope" type="button" aria-label="Open the invitation from Caylin and Cole">
         <span class="envelope__float">
@@ -85,7 +89,7 @@
             <span class="card__inner">
               <img class="card__seal" src="assets/img/wax-seal.webp" width="142" height="144" alt="">
               <span class="card__names">Caylin &amp; Cole</span>
-              <span class="card__kicker">Baby Shower</span>
+              <span class="card__kicker">Baby Shower<br>&amp; Gender Reveal</span>
             </span>
           </span>
 
@@ -124,7 +128,7 @@
 
   <!-- ============ THE STORY ============ -->
   <div class="progress" id="progress" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 
   <main class="story" id="story">
@@ -137,19 +141,31 @@
       <path id="threadPath" class="thread__path" mask="url(#threadMask)"/>
     </svg>
 
-    <!-- 01 · Welcome -->
-    <section class="chapter chapter--welcome" id="welcome" aria-labelledby="welcome-title" data-chapter="0">
-      <div class="deco" data-speed="-0.08" style="left:3%;top:12%;width:clamp(78px,24vw,150px)"><img class="drift" src="assets/img/cloud.webp" width="144" height="75" alt=""></div>
-      <div class="deco" data-speed="0.06" style="right:4%;top:22%;width:clamp(48px,13vw,84px)"><img class="twinkle" src="assets/img/sparkles.webp" width="88" height="104" alt=""></div>
-      <div class="deco" data-speed="-0.12" style="right:-4%;top:60%;width:clamp(70px,20vw,130px)"><img class="drift drift--slow" src="assets/img/cloud.webp" width="144" height="75" alt=""></div>
-      <div class="deco" data-speed="0.1" style="left:7%;top:70%;width:clamp(40px,11vw,70px)"><img class="float" src="assets/img/hearts.webp" width="101" height="131" alt=""></div>
-      <div class="deco" data-speed="0.04" style="right:14%;top:80%;width:clamp(44px,12vw,72px)"><img class="float float--alt" src="assets/img/confetti.webp" width="96" height="58" alt=""></div>
+    <!-- 01 · Welcome — We can barely wait -->
+    <section class="chapter chapter--welcome hero" id="welcome" aria-labelledby="welcome-title">
+      <div class="deco" data-speed="-0.08" style="left:3%;top:9%;width:clamp(70px,20vw,140px)"><img class="drift" src="assets/img/cloud.webp" width="144" height="75" alt=""></div>
+      <div class="deco" data-speed="0.06" style="right:5%;top:15%;width:clamp(40px,11vw,76px)"><img class="twinkle" src="assets/img/sparkles.webp" width="88" height="104" alt=""></div>
 
-      <div class="chapter__inner welcome">
-        <img class="welcome__seal" data-reveal="scale" src="assets/img/wax-seal.webp" width="142" height="144" alt="">
-        <p class="eyebrow" data-reveal style="--d:.15s">Caylin &amp; Cole · Baby Shower</p>
-        <h1 class="display display--xl" id="welcome-title" tabindex="-1" data-reveal="ink" style="--d:.35s">A little celebration is waiting for you…</h1>
-        <p class="welcome__cue" data-reveal style="--d:1.2s">
+      <p class="eyebrow hero__eyebrow" data-reveal>Caylin &amp; Cole<span>Baby Shower &amp; Gender Reveal</span></p>
+
+      <div class="hero__frame">
+        <span class="hero__glow" aria-hidden="true"></span>
+        <h1 class="hero__title" id="welcome-title" tabindex="-1">
+          <span class="hero__we" data-reveal style="--d:.25s">We can</span>
+          <span class="hero__barely" data-reveal="ink" style="--d:.5s">Barely</span>
+          <span class="hero__wait" data-reveal style="--d:1.25s">wait…</span>
+        </h1>
+        <img class="hero__couple" data-reveal="lift"
+             srcset="assets/photos/couple-cutout-640.webp 640w, assets/photos/couple-cutout-1000.webp 1000w"
+             sizes="(min-width: 900px) 470px, 92vw"
+             src="assets/photos/couple-cutout-640.webp" width="1000" height="1385"
+             alt="Caylin and Cole standing together, smiling" fetchpriority="high" decoding="async">
+        <img class="hero__blocks float float--slow" data-reveal="right" style="--d:1.5s" src="assets/img/blocks.webp" width="175" height="215" alt="" aria-hidden="true">
+      </div>
+
+      <div class="hero__foot">
+        <p class="hero__lede" data-reveal style="--d:1.6s">A little celebration is waiting for you…</p>
+        <p class="welcome__cue" data-reveal style="--d:2s">
           <span>Scroll to begin</span>
           <span class="cue-line" aria-hidden="true"></span>
         </p>
@@ -157,21 +173,23 @@
     </section>
 
     <!-- 02 · Occasion -->
-    <section class="chapter chapter--occasion" id="occasion" aria-labelledby="occasion-title" data-chapter="1">
-      <div class="deco" data-speed="0.1" style="left:2%;top:4%;width:clamp(58px,16vw,110px)"><img class="float" src="assets/img/booties.webp" width="166" height="161" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="-0.06" style="right:3%;top:9%;width:clamp(52px,15vw,100px)"><img class="float float--alt" src="assets/img/onesie.webp" width="171" height="190" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.05" style="right:6%;top:30%;width:clamp(34px,9vw,54px)"><img class="twinkle" src="assets/img/sparkle.webp" width="55" height="64" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.12" style="left:3%;top:90%;width:clamp(50px,14vw,100px)"><img class="float float--slow" src="assets/img/blocks.webp" width="175" height="215" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="-0.08" style="right:4%;top:33%;width:clamp(34px,9vw,64px)"><img class="float" src="assets/img/bottle.webp" width="133" height="205" alt="" loading="lazy" decoding="async"></div>
+    <section class="chapter chapter--occasion" id="occasion" aria-labelledby="occasion-title">
+      <div class="deco" data-speed="-0.06" style="right:3%;top:5%;width:clamp(44px,12vw,80px)"><img class="float" src="assets/img/hearts.webp" width="101" height="131" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.05" style="left:5%;top:40%;width:clamp(30px,8vw,50px)"><img class="twinkle" src="assets/img/sparkle.webp" width="55" height="64" alt="" loading="lazy" decoding="async"></div>
 
       <div class="chapter__inner">
         <h2 class="display display--lg" id="occasion-title" data-reveal="ink">A new little chapter is about to begin.</h2>
         <p class="lede" data-reveal style="--d:.2s">And before a tiny new arrival makes their grand entrance, there’s a special moment worth celebrating.</p>
 
-        <figure class="portrait portrait--mint" data-reveal="portrait">
-          <span class="portrait__arch" aria-hidden="true"></span>
-          <img class="portrait__img" src="assets/img/couple-welcome.webp" width="492" height="353" alt="Illustration of Caylin and Cole smiling and waving hello" loading="lazy" decoding="async">
-          <img class="portrait__flowers" src="assets/img/flowers.webp" width="144" height="137" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        <figure class="snapshot" data-reveal="snap">
+          <span class="snapshot__tape snapshot__tape--l" aria-hidden="true"></span>
+          <span class="snapshot__tape snapshot__tape--r" aria-hidden="true"></span>
+          <span class="snapshot__photo">
+            <img srcset="assets/photos/photo-hug-640.webp 640w, assets/photos/photo-hug-1000.webp 1000w"
+                 sizes="(min-width: 900px) 380px, 78vw"
+                 src="assets/photos/photo-hug-640.webp" width="1000" height="1333"
+                 alt="Caylin and Cole hugging and smiling at home" loading="lazy" decoding="async">
+          </span>
         </figure>
 
         <p class="names" aria-label="Caylin and Cole">
@@ -179,29 +197,57 @@
           <span class="names__amp" data-reveal="scale" style="--d:.35s">&amp;</span>
           <span class="names__two" data-reveal="ink" style="--d:.55s">Cole</span>
         </p>
-        <p class="lede lede--strong" data-reveal style="--d:.9s">are getting ready to become parents…</p>
+        <p class="lede lede--strong" data-reveal style="--d:.9s">are getting ready to meet their little one…</p>
         <p class="lede" data-reveal style="--d:.2s">…and we’d love for you to be part of the celebration.</p>
       </div>
     </section>
 
-    <!-- 03 · Dress code -->
-    <section class="chapter chapter--dress" id="dress" aria-labelledby="dress-title" data-chapter="2">
-      <div class="deco" data-speed="-0.08" style="right:2%;top:3%;width:clamp(60px,17vw,112px)"><img class="float float--alt" src="assets/img/bow-denim.webp" width="154" height="146" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.1" style="left:5%;top:5%;width:clamp(30px,8vw,48px)"><img class="float" src="assets/img/heart-pink.webp" width="47" height="46" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.06" style="right:8%;top:40%;width:clamp(26px,7vw,42px)"><img class="float float--slow" src="assets/img/heart-blue.webp" width="39" height="41" alt="" loading="lazy" decoding="async"></div>
+    <!-- 03 · The mystery — boy or girl? -->
+    <section class="chapter chapter--reveal" id="reveal" aria-labelledby="reveal-title">
+      <span class="reveal__glow reveal__glow--blue" aria-hidden="true"></span>
+      <span class="reveal__glow reveal__glow--pink" aria-hidden="true"></span>
+      <span class="qmark qmark--1 float" aria-hidden="true">?</span>
+      <span class="qmark qmark--2 float float--alt" aria-hidden="true">?</span>
+      <span class="qmark qmark--3 float float--slow" aria-hidden="true">?</span>
+      <span class="qmark qmark--4 float float--alt" aria-hidden="true">?</span>
+      <span class="qmark qmark--5 float" aria-hidden="true">?</span>
+      <div class="deco" data-speed="-0.12" style="left:-3%;top:58%;width:clamp(64px,19vw,124px)"><img class="float float--slow" src="assets/img/balloons.webp" width="172" height="257" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.06" style="right:6%;top:52%;width:clamp(36px,10vw,62px)"><img class="twinkle" src="assets/img/sparkles.webp" width="88" height="104" alt="" loading="lazy" decoding="async"></div>
+
+      <div class="chapter__inner">
+        <p class="lede lede--intro" data-reveal>But there’s one little mystery we still have to discover…</p>
+        <h2 class="reveal__title" id="reveal-title" aria-label="Boy or girl?">
+          <span class="reveal__boy" data-reveal="ink" style="--d:.2s">Boy</span>
+          <span class="reveal__or" data-reveal="scale" style="--d:.75s">or</span>
+          <span class="reveal__girl" data-reveal="ink" style="--d:1s">Girl?</span>
+        </h2>
+
+        <div class="mystery" data-reveal="snap" style="--d:.2s">
+          <img class="mystery__seal" src="assets/img/wax-seal.webp" width="142" height="144" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <p class="mystery__its">It’s a…</p>
+          <p class="mystery__secret" aria-label="still a secret"><span aria-hidden="true">? ? ?</span></p>
+          <p class="mystery__note">To be revealed at the celebration</p>
+        </div>
+
+        <p class="display display--md reveal__cta" data-reveal="ink" style="--d:.2s">Come find out with us.</p>
+      </div>
+    </section>
+
+    <!-- 04 · Dress code -->
+    <section class="chapter chapter--dress" id="dress" aria-labelledby="dress-title">
+      <div class="deco" data-speed="-0.08" style="right:2%;top:4%;width:clamp(56px,15vw,100px)"><img class="float float--alt" src="assets/img/bow-denim.webp" width="154" height="146" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.1" style="left:5%;top:6%;width:clamp(28px,7.5vw,46px)"><img class="float" src="assets/img/heart-pink.webp" width="47" height="46" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.06" style="right:7%;top:62%;width:clamp(26px,7vw,42px)"><img class="float float--slow" src="assets/img/heart-blue.webp" width="39" height="41" alt="" loading="lazy" decoding="async"></div>
 
       <div class="chapter__inner">
         <p class="lede lede--intro" data-reveal>And for this little celebration, we’ve got a look in mind…</p>
 
-        <div class="moodboard">
-          <figure class="portrait portrait--round portrait--split" data-reveal="portrait">
-            <span class="portrait__arch" aria-hidden="true"></span>
-            <img class="portrait__img" src="assets/img/couple-seated.webp" width="450" height="357" alt="Illustration of Caylin and Cole sitting together, Caylin in soft pink and Cole in blue denim jeans" loading="lazy" decoding="async">
-          </figure>
-          <img class="moodboard__item moodboard__item--jacket float float--slow" data-reveal="left" style="--d:.3s" src="assets/img/jacket.webp" width="179" height="144" alt="" loading="lazy" decoding="async">
-          <img class="moodboard__item moodboard__item--pocket float" data-reveal="right" style="--d:.45s" src="assets/img/pocket.webp" width="95" height="102" alt="" loading="lazy" decoding="async">
-          <img class="moodboard__item moodboard__item--swatch" data-reveal="right" style="--d:.6s" src="assets/img/denim-swatch.webp" width="119" height="146" alt="" loading="lazy" decoding="async">
-        </div>
+        <figure class="archphoto" data-reveal="photo">
+          <img srcset="assets/photos/photo-park-640.webp 640w, assets/photos/photo-park-1066.webp 1066w"
+               sizes="(min-width: 900px) 420px, 86vw"
+               src="assets/photos/photo-park-640.webp" width="1066" height="1599"
+               alt="Caylin and Cole relaxing on a picnic blanket in the park, Cole in denim jeans" loading="lazy" decoding="async">
+        </figure>
 
         <div class="denim-card" data-reveal="scale">
           <h2 class="visually-hidden" id="dress-title">Dress code: denim with a touch of pastel pink or pastel blue</h2>
@@ -214,20 +260,21 @@
             <span class="swatch swatch--blue" data-reveal="right" style="--d:.85s">pastel blue</span>
           </div>
         </div>
-        <p class="note" data-reveal style="--d:.2s">Your favourite jeans, a denim jacket or shirt — finished with something soft pink or baby blue.</p>
+        <p class="note" data-reveal style="--d:.2s">Your favourite jeans, a denim jacket or shirt — finished with something soft pink or baby blue. Team pink or team blue… you choose.</p>
       </div>
     </section>
 
-    <!-- 04 · Date & time -->
-    <section class="chapter chapter--date" id="date" aria-labelledby="date-title" data-chapter="3">
-      <div class="deco" data-speed="-0.14" style="left:-2%;top:6%;width:clamp(64px,19vw,124px)"><img class="float float--slow" src="assets/img/balloons.webp" width="172" height="257" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="-0.1" style="right:1%;top:28%;width:clamp(66px,19vw,128px)"><img class="float" src="assets/img/balloon-cluster.webp" width="191" height="146" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.05" style="left:6%;top:47%;width:clamp(36px,10vw,62px)"><img class="twinkle" src="assets/img/sparkles.webp" width="88" height="104" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.08" style="right:4%;top:88%;width:clamp(40px,11vw,70px)"><img class="float float--alt" src="assets/img/confetti.webp" width="96" height="58" alt="" loading="lazy" decoding="async"></div>
+    <!-- 05 · Date & time -->
+    <section class="chapter chapter--date" id="date" aria-labelledby="date-title">
+      <div class="deco" data-speed="-0.1" style="right:2%;top:1.5%;width:clamp(60px,16vw,120px)"><img class="float" src="assets/img/balloon-cluster.webp" width="191" height="146" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.05" style="left:5%;top:44%;width:clamp(36px,10vw,62px)"><img class="twinkle" src="assets/img/sparkles.webp" width="88" height="104" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.08" style="left:4%;top:86%;width:clamp(48px,13vw,84px)"><img class="float float--alt" src="assets/img/gift-pink.webp" width="175" height="186" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.06" style="right:6%;top:84%;width:clamp(40px,11vw,70px)"><img class="float float--alt" src="assets/img/confetti.webp" width="96" height="58" alt="" loading="lazy" decoding="async"></div>
 
       <div class="chapter__inner">
         <p class="lede lede--intro" data-reveal>Now that you’re dressed for the occasion…</p>
-        <h2 class="display display--md" id="date-title" data-reveal="ink" style="--d:.2s">Save the date and come celebrate with us.</h2>
+        <h2 class="display display--lg" id="date-title" data-reveal="ink" style="--d:.2s">Save the date…</h2>
+        <p class="lede" data-reveal style="--d:.7s">because we can barely wait to celebrate with you.</p>
 
         <div class="when" role="group" aria-label="Saturday 31 October 2026 at 15:00">
           <p class="when__day" data-reveal="fade" aria-hidden="true">Saturday</p>
@@ -242,17 +289,11 @@
             <span class="when__pm" data-reveal="fade" style="--d:1.9s">3 o’clock in the afternoon</span>
           </p>
         </div>
-
-        <figure class="portrait portrait--yellow" data-reveal="portrait">
-          <span class="portrait__arch" aria-hidden="true"></span>
-          <img class="portrait__img" src="assets/img/couple-celebrate.webp" width="523" height="355" alt="Illustration of Caylin and Cole celebrating, Caylin with a party blower and Cole waving" loading="lazy" decoding="async">
-          <img class="portrait__gift" src="assets/img/gift-pink.webp" width="175" height="186" alt="" aria-hidden="true" loading="lazy" decoding="async">
-        </figure>
       </div>
     </section>
 
-    <!-- 05 · Location -->
-    <section class="chapter chapter--place" id="place" aria-labelledby="place-title" data-chapter="4">
+    <!-- 06 · Location -->
+    <section class="chapter chapter--place" id="place" aria-labelledby="place-title">
       <div class="deco" data-speed="-0.06" style="right:-3%;top:4%;width:clamp(70px,21vw,136px)"><img class="drift" src="assets/img/cloud.webp" width="144" height="75" alt="" loading="lazy" decoding="async"></div>
       <div class="deco" data-speed="0.06" style="left:4%;top:12%;width:clamp(30px,8vw,48px)"><img class="twinkle" src="assets/img/sparkle.webp" width="55" height="64" alt="" loading="lazy" decoding="async"></div>
 
@@ -292,19 +333,23 @@
       </div>
     </section>
 
-    <!-- 06 · RSVP -->
-    <section class="chapter chapter--rsvp" id="rsvp" aria-labelledby="rsvp-title" data-chapter="5">
-      <div class="deco" data-speed="0.08" style="left:2%;top:26%;width:clamp(64px,18vw,118px)"><img class="float float--slow" src="assets/img/teddy.webp" width="169" height="214" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="-0.08" style="right:2%;top:31%;width:clamp(58px,16vw,106px)"><img class="float float--alt" src="assets/img/gift-cream.webp" width="181" height="177" alt="" loading="lazy" decoding="async"></div>
-      <div class="deco" data-speed="0.04" style="right:10%;top:4%;width:clamp(40px,11vw,68px)"><img class="float" src="assets/img/hearts.webp" width="101" height="131" alt="" loading="lazy" decoding="async"></div>
+    <!-- 07 · RSVP -->
+    <section class="chapter chapter--rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="deco" data-speed="0.08" style="left:2%;top:25%;width:clamp(58px,16vw,110px)"><img class="float float--slow" src="assets/img/teddy.webp" width="169" height="214" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="-0.08" style="right:2%;top:30%;width:clamp(52px,14vw,100px)"><img class="float float--alt" src="assets/img/gift-cream.webp" width="181" height="177" alt="" loading="lazy" decoding="async"></div>
+      <div class="deco" data-speed="0.04" style="right:10%;top:3%;width:clamp(40px,11vw,68px)"><img class="float" src="assets/img/hearts.webp" width="101" height="131" alt="" loading="lazy" decoding="async"></div>
 
       <div class="chapter__inner">
         <h2 class="display display--lg" id="rsvp-title" data-reveal="ink">And now, all that’s missing is you.</h2>
         <p class="lede" data-reveal style="--d:.3s">Come celebrate this beautiful new beginning with Caylin &amp; Cole.</p>
 
-        <figure class="portrait portrait--lavender" data-reveal="portrait">
+        <figure class="portrait portrait--photo" data-reveal="portrait">
           <span class="portrait__arch" aria-hidden="true"></span>
-          <img class="portrait__img" src="assets/img/couple-baby.webp" width="395" height="353" alt="Illustration of Caylin and Cole holding a baby blanket and a tiny pair of knitted booties" loading="lazy" decoding="async">
+          <img class="portrait__img"
+               srcset="assets/photos/couple-cutout-640.webp 640w, assets/photos/couple-cutout-1000.webp 1000w"
+               sizes="(min-width: 900px) 400px, 84vw"
+               src="assets/photos/couple-cutout-640.webp" width="1000" height="1385"
+               alt="" loading="lazy" decoding="async">
         </figure>
 
         <p class="question display" data-reveal="ink">Will you be joining us?</p>
@@ -336,6 +381,7 @@
 
       <footer class="finale">
         <img class="finale__seal" src="assets/img/wax-seal.webp" width="142" height="144" alt="" loading="lazy" decoding="async">
+        <p class="finale__line">We can barely wait to see you there.</p>
         <p class="finale__names display">Caylin &amp; Cole</p>
         <p class="finale__meta">31 · 10 · 2026 &nbsp;·&nbsp; Kimberley</p>
         <button class="replay" id="replay" type="button">
